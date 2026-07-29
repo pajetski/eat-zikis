@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function builtHtml() {
@@ -16,6 +16,7 @@ test("builds the finished Ziki's brand site", async () => {
   assert.match(html, /no seed oils/i);
   assert.match(html, /https:\/\/www\.instagram\.com\/eatzikis\//);
   assert.match(html, /\/og-v2\.jpg/);
+  assert.match(html, /href="\/press-kit"/);
   assert.doesNotMatch(html, /codex-preview|SkeletonPreview|Starter Project/);
 });
 
@@ -52,4 +53,25 @@ test("builds the event inquiry confirmation page", async () => {
   assert.match(html, /Inquiry received/);
   assert.match(html, /Let’s make it delicious\./);
   assert.match(html, /Back to Ziki’s/);
+});
+
+test("builds the public press kit and downloadable brand package", async () => {
+  const html = await readFile(
+    new URL("../.next/server/app/press-kit.html", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(html, /Press Kit \| Ziki’s Greek Street Eats/);
+  assert.match(html, /The Ziki’s/);
+  assert.match(html, /Alyssa Gosselin/);
+  assert.match(html, /Organic ingredients/);
+  assert.match(html, /AI-created placeholders/);
+  assert.match(html, /\/downloads\/zikis-press-kit\.zip/);
+  assert.match(html, /\/downloads\/zikis-brand-guide\.pdf/);
+  assert.match(html, /\/downloads\/zikis-approved-copy\.md/);
+
+  await access(new URL("../public/downloads/zikis-press-kit.zip", import.meta.url));
+  await access(
+    new URL("../public/downloads/zikis-brand-guide.pdf", import.meta.url),
+  );
 });

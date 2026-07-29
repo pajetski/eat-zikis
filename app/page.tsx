@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import EventInquiryForm from "./EventInquiryForm";
 
 const instagramUrl = "https://www.instagram.com/eatzikis/";
@@ -53,6 +54,7 @@ export default function Home() {
           <a href="#story">Our story</a>
           <a href="#find-us">Find us</a>
           <a href="#inquire">Inquire</a>
+          <Link href="/press-kit">Press kit</Link>
         </nav>
 
         <a
@@ -281,9 +283,12 @@ export default function Home() {
           <p>Modern Greek street food.</p>
           <p>San Diego, California.</p>
         </div>
-        <a href={instagramUrl} target="_blank" rel="noreferrer">
-          Instagram ↗
-        </a>
+        <div className="footer-links">
+          <a href={instagramUrl} target="_blank" rel="noreferrer">
+            Instagram ↗
+          </a>
+          <Link href="/press-kit">Press kit ↗</Link>
+        </div>
         <p className="copyright">© {new Date().getFullYear()} Ziki’s</p>
       </footer>
     </main>
