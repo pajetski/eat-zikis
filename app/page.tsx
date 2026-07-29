@@ -7,18 +7,27 @@ const menuItems = [
   {
     number: "01",
     name: "Chicken Gyro",
+    image: "/menu/chicken-gyro.jpg",
+    imageAlt:
+      "Chicken gyro with grilled chicken, lettuce, tomato, red onion, feta, and tzatziki",
     description:
       "Herb-marinated chicken, crisp greens, tomato, red onion, feta, and house tzatziki in warm pita.",
   },
   {
     number: "02",
     name: "Lamb Gyro",
+    image: "/menu/lamb-gyro.jpg",
+    imageAlt:
+      "Lamb gyro with sliced lamb, lettuce, tomato, red onion, feta, and tzatziki",
     description:
       "Savory sliced lamb, fresh vegetables, feta, and creamy tzatziki wrapped to order.",
   },
   {
     number: "03",
     name: "Trio of Dips",
+    image: "/menu/trio-of-dips.jpg",
+    imageAlt:
+      "Tzatziki, hummus, and spicy feta with warm pita and fresh vegetables",
     description:
       "House tzatziki, hummus, and spicy feta served with warm pita and market vegetables.",
   },
@@ -164,6 +173,14 @@ export default function Home() {
           {menuItems.map((item) => (
             <article className="menu-card" key={item.name}>
               <span className="menu-number">{item.number}</span>
+              <div className="menu-image">
+                <Image
+                  src={item.image}
+                  alt={item.imageAlt}
+                  fill
+                  sizes="(max-width: 700px) 100vw, 33vw"
+                />
+              </div>
               <div>
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>

@@ -471,8 +471,7 @@ h1 em,
   border-right: 1px solid rgba(244, 237, 220, 0.2);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 355px;
+  min-height: 610px;
   padding: 35px 32px 32px 0;
   position: relative;
 }
@@ -489,6 +488,23 @@ h1 em,
   color: var(--sky);
   font-family: var(--font-geist-mono), monospace;
   font-size: 10px;
+}
+
+.menu-image {
+  aspect-ratio: 4 / 3;
+  background: rgba(244, 237, 220, 0.08);
+  margin: 31px 0 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.menu-image img {
+  object-fit: cover;
+  transition: transform 420ms ease;
+}
+
+.menu-card:hover .menu-image img {
+  transform: scale(1.035);
 }
 
 .menu-card h3,
@@ -1093,7 +1109,7 @@ footer > a {
   .menu-card {
     border-bottom: 1px solid rgba(244, 237, 220, 0.2);
     border-right: 0;
-    min-height: 285px;
+    min-height: 0;
     padding: 28px 0;
   }
 

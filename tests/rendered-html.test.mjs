@@ -26,6 +26,9 @@ test("includes Alyssa's story, the menu, and the event inquiry journey", async (
   assert.match(html, /Chicken Gyro/);
   assert.match(html, /Lamb Gyro/);
   assert.match(html, /Trio of Dips/);
+  assert.match(html, /\/menu\/chicken-gyro\.jpg/);
+  assert.match(html, /\/menu\/lamb-gyro\.jpg/);
+  assert.match(html, /\/menu\/trio-of-dips\.jpg/);
   assert.match(html, /Follow @eatzikis/);
   assert.match(html, /Send event inquiry/);
   assert.match(html, /Guest count/);
