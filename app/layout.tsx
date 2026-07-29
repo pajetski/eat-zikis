@@ -31,9 +31,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.png",
+        url: "/og-v2.jpg",
         width: 1200,
         height: 630,
+        type: "image/jpeg",
         alt: "Ziki’s Greek Street Eats — Greek food, with sunshine.",
       },
     ],
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og.png"],
+    images: ["/og-v2.jpg"],
   },
 };
 

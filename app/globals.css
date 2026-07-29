@@ -597,7 +597,7 @@ h1 em,
 .find-photo {
   background-image:
     linear-gradient(180deg, transparent 55%, rgba(20, 19, 15, 0.35)),
-    url("/zikis-hero.png");
+    url("/zikis-hero.jpg");
   background-position: 62% center;
   background-size: cover;
   min-height: 560px;
@@ -665,7 +665,7 @@ h1 em,
   background-size: 32px 32px;
   display: flex;
   flex-direction: column;
-  padding: clamp(90px, 11vw, 160px) 25px;
+  padding: clamp(90px, 11vw, 160px) clamp(20px, 5vw, 72px);
   text-align: center;
 }
 
@@ -702,6 +702,199 @@ h1 em,
 .inquiry-details i {
   color: var(--blue);
   font-size: 7px;
+}
+
+.inquiry-form {
+  background: var(--paper);
+  border: 1px solid rgba(20, 19, 15, 0.22);
+  box-shadow: 14px 14px 0 var(--blue);
+  margin-top: 18px;
+  max-width: 1050px;
+  padding: clamp(28px, 5vw, 64px);
+  text-align: left;
+  width: 100%;
+}
+
+.honeypot {
+  display: none;
+}
+
+.form-heading {
+  align-items: end;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 45px;
+  grid-template-columns: 1.3fr 1fr;
+  margin-bottom: 42px;
+  padding-bottom: 34px;
+}
+
+.form-step {
+  color: var(--blue);
+  display: block;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 15px;
+}
+
+.form-heading h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  margin: 0;
+}
+
+.form-heading > p {
+  color: rgba(20, 19, 15, 0.65);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.form-grid {
+  display: grid;
+  gap: 26px 30px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.form-field > span {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  appearance: none;
+  background: white;
+  border: 1px solid rgba(20, 19, 15, 0.26);
+  border-radius: 0;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  min-height: 52px;
+  padding: 14px 15px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+  width: 100%;
+}
+
+.form-field textarea {
+  min-height: 145px;
+  resize: vertical;
+}
+
+.form-field select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--ink) 50%),
+    linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 22px,
+    calc(100% - 13px) 22px;
+  background-repeat: no-repeat;
+  background-size: 5px 5px;
+  padding-right: 38px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(13, 69, 150, 0.12);
+  outline: none;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
+}
+
+.form-submit {
+  align-items: center;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  margin-top: 34px;
+  padding-top: 30px;
+}
+
+.form-submit > p {
+  color: rgba(20, 19, 15, 0.58);
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 390px;
+}
+
+.form-submit button {
+  border: 0;
+  cursor: pointer;
+}
+
+.form-alternate {
+  font-size: 12px !important;
+  margin: 36px 0 0 !important;
+}
+
+.form-alternate a {
+  border-bottom: 1px solid var(--ink);
+  font-weight: 700;
+  padding-bottom: 4px;
+}
+
+.thank-you {
+  align-items: center;
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(45deg, transparent 48%, rgba(13, 69, 150, 0.07) 49%, rgba(13, 69, 150, 0.07) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(13, 69, 150, 0.07) 49%, rgba(13, 69, 150, 0.07) 51%, transparent 52%);
+  background-size: 32px 32px;
+  display: flex;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 30px;
+}
+
+.thank-you-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 14px 14px 0 var(--blue);
+  max-width: 720px;
+  padding: clamp(42px, 8vw, 90px);
+  text-align: center;
+}
+
+.thank-you-card h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(54px, 8vw, 92px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.thank-you-card > p:not(.eyebrow) {
+  line-height: 1.65;
+  margin: 28px auto 36px;
+  max-width: 510px;
+}
+
+.thank-you-card .button {
+  margin: 0 auto;
 }
 
 footer {
@@ -923,6 +1116,33 @@ footer > a {
 
   .find-copy {
     min-height: 630px;
+  }
+
+  .inquiry-form {
+    box-shadow: 8px 8px 0 var(--blue);
+    padding: 28px 20px;
+  }
+
+  .form-heading,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-heading {
+    gap: 20px;
+  }
+
+  .form-field-full {
+    grid-column: auto;
+  }
+
+  .form-submit {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-submit .button {
+    width: 100%;
   }
 
   footer {

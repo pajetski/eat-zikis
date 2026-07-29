@@ -9,6 +9,12 @@ Brand site for Ziki’s, the modern Greek street-food pop-up founded by Alyssa G
 - `public/alys-profile.jpg` — founder portrait used in the story section
 - `public/zikis-hero.png` — website food photography
 - `public/og.png` — social sharing card
+- `public/menu/chicken-gyro.jpg` — square chicken gyro menu photograph
+- `public/menu/lamb-gyro.jpg` — square lamb gyro menu photograph
+- `public/menu/trio-of-dips.jpg` — square trio-of-dips menu photograph
+
+Event inquiries are collected through Netlify Forms. After deployment, submissions
+appear in the Netlify dashboard under **Forms → event-inquiry**.
 
 ## Local preview
 
