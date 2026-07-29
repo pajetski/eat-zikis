@@ -29,9 +29,15 @@ test("includes Alyssa's story, the menu, and the event inquiry journey", async (
   assert.match(html, /Follow @eatzikis/);
   assert.match(html, /Send event inquiry/);
   assert.match(html, /Guest count/);
-  assert.match(html, /data-netlify="true"/);
   assert.match(html, /name="form-name" value="event-inquiry"/);
-  assert.match(html, /action="\/thank-you"/);
+  assert.match(html, /action="\/__forms\.html"/);
+
+  const registrationHtml = await readFile(
+    new URL("../public/__forms.html", import.meta.url),
+    "utf8",
+  );
+  assert.match(registrationHtml, /data-netlify="true"/);
+  assert.match(registrationHtml, /name="event-inquiry"/);
 });
 
 test("builds the event inquiry confirmation page", async () => {

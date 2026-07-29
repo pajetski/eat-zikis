@@ -845,6 +845,11 @@ h1 em,
   cursor: pointer;
 }
 
+.form-submit button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
 .form-alternate {
   font-size: 12px !important;
   margin: 36px 0 0 !important;

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ziki's Netlify form registration</title>
+  </head>
+  <body>
+    <form
+      name="event-inquiry"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="event-inquiry" />
+      <input name="bot-field" />
+      <input name="name" type="text" />
+      <input name="email" type="email" />
+      <input name="phone" type="tel" />
+      <input name="organization" type="text" />
+      <input name="event-type" type="text" />
+      <input name="event-date" type="date" />
+      <input name="location" type="text" />
+      <input name="guest-count" type="number" />
+      <textarea name="event-details"></textarea>
+    </form>
+  </body>
+</html>
